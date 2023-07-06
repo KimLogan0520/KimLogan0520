@@ -49,3 +49,29 @@ print()
 list_g = [3, 99, 38]
 print(3 in list_g)
 print(44 not in list_g)
+
+books = [
+    {
+        "title": "book 11",
+        "price": 18000
+    },
+    {
+        "title": "book 22",
+        "price": 26000
+    },
+    {
+        "title": "book 33",
+        "price": 24000
+    }
+]
+def getPrice(book):
+    return book["price"]
+
+# print(min(books, key=getPrice))
+# print(max(books, key=getPrice))
+print(min(books, key=lambda book: book["price"]))
+print(max(books, key=lambda book: book["price"]))
+
+books.sort(key=lambda book: book["price"])
+for book in books:
+    print(book)
