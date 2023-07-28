@@ -51,3 +51,4 @@ Temporary Items
 **/.stage.env
 **/.production.env
 **/.development.env
+**/*.class
