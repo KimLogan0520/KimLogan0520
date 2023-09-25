@@ -1,0 +1,3 @@
+INDEX VERSION 1.131+/Users/chankim/Desktop/KimLogan0520/study/java/basic/.metadata/.plugins/org.eclipse.jdt.core
+30038764.index
+3431856117.index
