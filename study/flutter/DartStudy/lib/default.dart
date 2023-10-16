@@ -249,4 +249,17 @@ void main() {
   }
 
   print(Status.values); // Enum의 모든 수를 리스트로 반환
+
+  // while문
+  int total = 0;
+  while ( total < 10 ) {
+    total += 1;
+  }
+  print(total);
+
+  int total2 = 0;
+  do {
+    total2 += 1;
+  } while ( total2 < 10 );
+  print(total2);
 }
