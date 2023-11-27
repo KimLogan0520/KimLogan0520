@@ -20,14 +20,14 @@ innodb_buffer_pool_in_core_file=OFF
 
 max_allowed_packet=67108864
 explicit_defaults_for_timestamp=ON
-sql-mode= "STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
+sql-mode="STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION"
 
 character-set-server=utf8mb4
 character-set-filesystem=utf8mb4
 collation_server=utf8mb4_0900_ai_ci
 skip-character-set-client-handshake
 
-max_connections=8000
+max_connections=100
 max_connect_errors=999999
 
 activate_all_roles_on_login=1
@@ -43,7 +43,7 @@ default_password_lifetime=0
 sysdate-is-now
 
 #### InnoDB ---------------------------------------------------------------------------------------------------------
-innodb_sort_buffer_size=64M
+innodb_sort_buffer_size=5M
 
 
 innodb_data_home_dir=/data/mysql/
@@ -52,8 +52,8 @@ innodb_temp_data_file_path=ibtmp1:12M:autoextend
 
 
 innodb_log_group_home_dir=/log/innodb-log
-innodb_log_files_in_group=3
-innodb_log_file_size=2048M
+innodb_log_files_in_group=2
+innodb_log_file_size=1024M
 innodb_file_per_table=ON
 
 
@@ -67,14 +67,14 @@ innodb_undo_log_truncate=ON
 innodb_status_output_locks=ON
 innodb_print_all_deadlocks=ON
 innodb_adaptive_hash_index=OFF
-innodb_buffer_pool_size=20G
-innodb_buffer_pool_instances=10
+innodb_buffer_pool_size=200M
+innodb_buffer_pool_instances=1
 innodb_doublewrite=OFF
 innodb_checksum_algorithm=CRC32
 innodb_flush_log_at_trx_commit=0
 innodb_flush_method=O_DIRECT_NO_FSYNC
-innodb_io_capacity=1000
-innodb_io_capacity_max=5000
+innodb_io_capacity=100
+innodb_io_capacity_max=400
 innodb_ft_enable_stopword=OFF
 innodb_cmp_per_index_enable=ON
 
@@ -106,7 +106,7 @@ performance_schema_events_waits_history_size=10
 
 #### TDE (Encryption) ------------------------------------------------------------------------------------
 early-plugin-load=keyring_file.so
-keyring_file_data = /data/tde/tde_master.key
+keyring_file_data=/data/tde/tde_master.key
 
 #### Password validate -----------------------------------------------------------------------------------
 password_history=5
